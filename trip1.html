@@ -9,10 +9,10 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">✈ Ari Explores</a>
+      <a class="navbar-brand" href="index.html">✈ Ari Explores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,55 +25,61 @@
     </div>
   </nav>
 
-  <!-- Trip Hero Banner -->
-  <div class="trip-hero" style="background-image: url('images/trip1/cover.jpg');">
-    <div class="trip-hero-overlay text-white text-center">
-      <h1 class="display-4 fw-bold">My First Adventure</h1>
-      <p class="lead">Month Year · Destination</p>
+  <!-- Trip Hero -->
+  <div class="trip-hero">
+    <div class="trip-hero-overlay">
+      <h1>My First Adventure</h1>
+      <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem; letter-spacing:0.1em;">Month Year · Destination</p>
     </div>
   </div>
 
   <!-- Story -->
   <article class="container my-5" style="max-width: 760px;">
-    <h2>The Journey Begins</h2>
-    <p>
+
+    <h2 class="reveal">The Journey Begins</h2>
+    <p class="reveal">
       Write your travel story here. Describe how you felt arriving, the first sights, the smells, the excitement.
       This is your space — write like you're telling a friend about the trip.
     </p>
 
-    <!-- Inline photo -->
-    <img src="images/trip1/photo1.jpg" class="img-fluid rounded my-4 w-100" alt="Photo from the trip" />
+    <!-- Inline photo placeholder -->
+    <div class="reveal my-4 text-center" style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:16px; padding:4rem 2rem; color:rgba(255,255,255,0.4);">
+      📷 Your photo goes here — replace with &lt;img src="images/trip1/photo1.jpg"&gt;
+    </div>
 
-    <h2>Highlights</h2>
-    <p>
+    <h2 class="reveal">Highlights</h2>
+    <p class="reveal">
       What were the best moments? A hidden café? A sunset? A local you met? Tell that story here.
     </p>
 
     <!-- Photo Gallery -->
-    <h3 class="mt-5 mb-3">Photos</h3>
-    <div class="row g-3">
+    <h3 class="reveal mt-5 mb-3" style="font-family:'Playfair Display',serif; color:#fff;">Photos</h3>
+    <div class="row g-3 reveal">
       <div class="col-6 col-md-4">
-        <img src="images/trip1/photo1.jpg" class="img-fluid rounded gallery-img" alt="Photo 1" />
+        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🌅</div>
       </div>
       <div class="col-6 col-md-4">
-        <img src="images/trip1/photo2.jpg" class="img-fluid rounded gallery-img" alt="Photo 2" />
+        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🏔️</div>
       </div>
       <div class="col-6 col-md-4">
-        <img src="images/trip1/photo3.jpg" class="img-fluid rounded gallery-img" alt="Photo 3" />
+        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🌊</div>
       </div>
-      <!-- Add more photos by copying a col block above -->
     </div>
 
-    <div class="mt-5">
-      <a href="index.html" class="btn btn-outline-dark">← Back to Home</a>
+    <div class="mt-5 reveal">
+      <a href="index.html" class="btn-glow">← Back to Home</a>
     </div>
   </article>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <small>© 2026 Ari Explores · Built with ❤️ and Bootstrap</small>
+  <footer class="text-center py-4">
+    <small>© 2026 Ari Explores · Crafted with passion</small>
   </footer>
 
+  <!-- Back to Top -->
+  <button id="backToTop" title="Back to top">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

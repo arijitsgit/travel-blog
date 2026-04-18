@@ -9,10 +9,10 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">✈ Ari Explores</a>
+      <a class="navbar-brand" href="index.html">✈ Ari Explores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,26 +25,41 @@
     </div>
   </nav>
 
+  <!-- About Hero -->
+  <div style="background: linear-gradient(135deg, #0f0c29, #302b63); padding: 5rem 0; text-align:center;">
+    <div style="width:130px; height:130px; border-radius:50%; background:var(--glass-bg); border:3px solid #f9a825; margin:0 auto 1.5rem; display:flex; align-items:center; justify-content:center; font-size:4rem; box-shadow: 0 0 30px rgba(249,168,37,0.3);">
+      🧳
+    </div>
+    <h1 style="font-family:'Playfair Display',serif; font-size:2.5rem; background:linear-gradient(90deg,#fff,#f9a825); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">About Me</h1>
+  </div>
+
   <!-- About Content -->
-  <section class="container my-5" style="max-width: 700px;">
-    <h1 class="mb-4">About Me</h1>
-    <img src="images/profile.jpg" class="rounded-circle mb-4" width="150" height="150" alt="Arijit" style="object-fit:cover;" />
-    <p class="lead">
-      Hi, I'm Arijit — a travel enthusiast and QA engineer who believes the best way to test life is to explore it.
-    </p>
-    <p>
-      This blog is where I document my journeys: the places I've visited, the stories behind the photos, and the lessons each trip taught me.
-    </p>
-    <p>
-      When I'm not traveling, I'm probably planning the next trip or finding bugs in software.
-    </p>
+  <section class="trips-section">
+    <div class="container" style="max-width: 680px;">
+      <div class="reveal" style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:20px; padding:2.5rem; backdrop-filter:blur(10px);">
+        <p class="lead" style="color:#fff; font-family:'Playfair Display',serif; font-size:1.3rem;">
+          Hi, I'm Arijit — a travel enthusiast and QA engineer who believes the best way to test life is to explore it.
+        </p>
+        <p style="color:rgba(255,255,255,0.7); margin-top:1rem; line-height:1.85;">
+          This blog is where I document my journeys: the places I've visited, the stories behind the photos, and the lessons each trip taught me.
+        </p>
+        <p style="color:rgba(255,255,255,0.7); margin-top:1rem; line-height:1.85;">
+          When I'm not traveling, I'm probably planning the next trip — or finding bugs in software.
+        </p>
+        <a href="index.html" class="btn-glow mt-3 d-inline-block">See My Trips →</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <small>© 2026 Ari Explores · Built with ❤️ and Bootstrap</small>
+  <footer class="text-center py-4">
+    <small>© 2026 Ari Explores · Crafted with passion</small>
   </footer>
 
+  <!-- Back to Top -->
+  <button id="backToTop" title="Back to top">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
