@@ -10,14 +10,14 @@
 <body>
 
   <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="index.html">✈ Ari Explores</a>
+      <a class="navbar-brand" href="index.html">Ari Explores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto gap-3">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
@@ -28,62 +28,77 @@
   <!-- Hero -->
   <header class="hero-section">
     <div class="hero-content">
-      <h1>Ari Explores</h1>
-      <p>Stories, photos &amp; adventures from around the world</p>
-      <a href="#trips" class="btn-hero">Explore Trips ↓</a>
+      <p class="hero-eyebrow">✈ Travel Blog</p>
+      <h1>Wander.<br>Discover.<br>Tell Stories.</h1>
+      <p>From misty mountain trails to sun-soaked coastlines — real journeys, told honestly.</p>
+      <a href="#trips" class="btn-hero">Explore Trips</a>
     </div>
   </header>
 
   <!-- Trips Section -->
   <section id="trips" class="trips-section">
     <div class="container">
-      <h2 class="section-title reveal">Latest Trips</h2>
-      <div class="row g-4">
 
-        <!-- Trip Card 1 -->
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="card trip-card h-100">
-            <div class="card-img-wrapper">
-              <!-- Replace with: <img src="images/trip1/cover.jpg" alt="Trip cover" /> -->
-              🌍
-            </div>
-            <div class="card-body">
-              <span class="trip-tag">🗓 Jan 2026</span>
-              <h5 class="card-title">My First Adventure</h5>
-              <p class="card-text">A short description of this amazing trip. Where did you go? What made it special?</p>
-              <a href="trip1.html" class="btn-glow mt-2">Read Story →</a>
-            </div>
+      <!-- Section heading -->
+      <div class="mb-5 reveal">
+        <p class="section-label">Latest Adventures</p>
+        <h2 class="section-title">From the Road</h2>
+      </div>
+
+      <!-- Featured large card -->
+      <div class="mb-5 reveal">
+        <a href="trip1.html" class="card-featured">
+          <div class="img-wrap">
+            <!-- Replace emoji with: <img src="images/trip1/cover.jpg" alt="Trip 1"> -->
+            🌍
           </div>
-        </div>
+          <div class="card-label">
+            <span class="trip-tag">Jan 2026 · Asia</span>
+            <h3>My First Adventure</h3>
+            <p>A short description of this amazing trip — where you went, what moved you, and why it mattered.</p>
+          </div>
+        </a>
+      </div>
 
-        <!-- Trip Card 2 -->
+      <hr class="divider mb-5" />
+
+      <!-- Smaller trip cards grid -->
+      <div class="row g-5">
+
         <div class="col-md-6 col-lg-4 reveal">
-          <div class="card trip-card h-100">
-            <div class="card-img-wrapper">
-              🏝️
-            </div>
+          <a href="trip2.html" class="trip-card">
+            <div class="img-wrap">🏝️</div>
             <div class="card-body">
-              <span class="trip-tag">🗓 Mar 2026</span>
+              <span class="trip-tag">Mar 2026 · Indonesia</span>
               <h5 class="card-title">Beaches of Bali</h5>
-              <p class="card-text">Turquoise waters, rice terraces, and temples — a week of sun and soul in Bali, Indonesia.</p>
-              <a href="trip2.html" class="btn-glow mt-2">Read Story →</a>
+              <p class="card-text">Turquoise waters, rice terraces, and temples — a week of sun and soul in Bali.</p>
+              <span class="read-more">Read Story →</span>
             </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Trip Card 3 -->
         <div class="col-md-6 col-lg-4 reveal">
-          <div class="card trip-card h-100">
-            <div class="card-img-wrapper">
-              🏔️
-            </div>
+          <a href="trip3.html" class="trip-card">
+            <div class="img-wrap">🏔️</div>
             <div class="card-body">
-              <span class="trip-tag">🗓 Apr 2026</span>
+              <span class="trip-tag">Apr 2026 · India</span>
               <h5 class="card-title">Himalayas Trek</h5>
-              <p class="card-text">Snow-capped peaks, chai breaks at 12,000 ft, and the most breathtaking sunrises I've ever seen.</p>
-              <a href="trip3.html" class="btn-glow mt-2">Read Story →</a>
+              <p class="card-text">Snow-capped peaks, chai breaks at 12,000 ft, and the most breathtaking sunrises.</p>
+              <span class="read-more">Read Story →</span>
             </div>
-          </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <a href="trip4.html" class="trip-card">
+            <div class="img-wrap">🌆</div>
+            <div class="card-body">
+              <span class="trip-tag">Coming Soon</span>
+              <h5 class="card-title">Next Destination</h5>
+              <p class="card-text">The next chapter is being written. Follow along for more stories from the road.</p>
+              <span class="read-more">Stay Tuned →</span>
+            </div>
+          </a>
         </div>
 
       </div>
@@ -91,8 +106,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
-    <small>© 2026 Ari Explores · Crafted with passion</small>
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:rgba(255,255,255,0.7);">Ari Explores</p>
+      <small>© 2026 · All rights reserved</small>
+    </div>
   </footer>
 
   <!-- Back to Top -->

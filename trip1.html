@@ -10,14 +10,14 @@
 <body>
 
   <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="index.html">✈ Ari Explores</a>
+      <a class="navbar-brand" href="index.html">Ari Explores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto gap-3">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
@@ -27,58 +27,63 @@
 
   <!-- Trip Hero -->
   <div class="trip-hero">
-    <div class="trip-hero-overlay">
+    <!-- To use a photo: style="background-image: url('images/trip1/cover.jpg'); background-size:cover; background-position:center;" -->
+    <div class="trip-hero-content">
+      <span class="hero-eyebrow" style="animation:none;">Jan 2026 · Asia</span>
       <h1>My First Adventure</h1>
-      <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem; letter-spacing:0.1em;">Month Year · Destination</p>
     </div>
   </div>
 
   <!-- Story -->
-  <article class="container my-5" style="max-width: 760px;">
+  <article class="container my-5 py-2" style="max-width: 720px;">
 
     <h2 class="reveal">The Journey Begins</h2>
     <p class="reveal">
-      Write your travel story here. Describe how you felt arriving, the first sights, the smells, the excitement.
-      This is your space — write like you're telling a friend about the trip.
+      Write your travel story here. Describe how you felt arriving, the first sights, the smells,
+      the excitement. This is your space — write like you're telling a close friend about the trip.
     </p>
 
-    <!-- Inline photo placeholder -->
-    <div class="reveal my-4 text-center" style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:16px; padding:4rem 2rem; color:rgba(255,255,255,0.4);">
-      📷 Your photo goes here — replace with &lt;img src="images/trip1/photo1.jpg"&gt;
+    <!-- Inline photo -->
+    <div class="reveal my-5 photo-placeholder" style="height:420px;">
+      📷 Drop your photo here — replace with &lt;img src="images/trip1/photo1.jpg" class="w-100"&gt;
     </div>
 
     <h2 class="reveal">Highlights</h2>
     <p class="reveal">
       What were the best moments? A hidden café? A sunset? A local you met? Tell that story here.
+      The more specific and personal, the better — that's what readers remember.
     </p>
 
     <!-- Photo Gallery -->
-    <h3 class="reveal mt-5 mb-3" style="font-family:'Playfair Display',serif; color:#fff;">Photos</h3>
-    <div class="row g-3 reveal">
+    <h2 class="reveal mt-5">Photos</h2>
+    <div class="row g-3 reveal mt-1">
       <div class="col-6 col-md-4">
-        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🌅</div>
+        <div class="photo-placeholder" style="height:180px;">🌅</div>
       </div>
       <div class="col-6 col-md-4">
-        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🏔️</div>
+        <div class="photo-placeholder" style="height:180px;">🏔️</div>
       </div>
       <div class="col-6 col-md-4">
-        <div style="background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:12px; height:160px; display:flex; align-items:center; justify-content:center; font-size:2rem;">🌊</div>
+        <div class="photo-placeholder" style="height:180px;">🌊</div>
       </div>
     </div>
 
-    <div class="mt-5 reveal">
-      <a href="index.html" class="btn-glow">← Back to Home</a>
+    <hr class="divider my-5" />
+
+    <div class="reveal">
+      <a href="index.html" class="read-more">← Back to All Trips</a>
     </div>
   </article>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
-    <small>© 2026 Ari Explores · Crafted with passion</small>
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:rgba(255,255,255,0.7);">Ari Explores</p>
+      <small>© 2026 · All rights reserved</small>
+    </div>
   </footer>
 
-  <!-- Back to Top -->
   <button id="backToTop" title="Back to top">↑</button>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
