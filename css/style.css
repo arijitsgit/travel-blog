@@ -401,6 +401,71 @@ footer {
   transform: translateY(0);
 }
 
+/* ── Love Button ── */
+.love-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  border: 2px solid #e8e0d5;
+  border-radius: 50px;
+  padding: 0.7rem 1.8rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.love-btn:hover {
+  border-color: #e07070;
+  color: #e07070;
+  transform: scale(1.04);
+}
+
+.love-btn.loved {
+  border-color: #e05555;
+  background: #fff5f5;
+  color: #e05555;
+}
+
+.love-btn .heart {
+  font-size: 1.3rem;
+  transition: transform 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  display: inline-block;
+  color: #ccc;
+}
+
+.love-btn.loved .heart { color: #e05555; }
+
+.love-btn.pop .heart {
+  animation: heartPop 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.love-count {
+  background: #f0ebe4;
+  border-radius: 50px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mid);
+  transition: background 0.2s;
+}
+
+.love-btn.loved .love-count {
+  background: #fde8e8;
+  color: #e05555;
+}
+
+@keyframes heartPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1.1); }
+}
+
 /* ── Back to top ── */
 #backToTop {
   position: fixed;

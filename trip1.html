@@ -69,6 +69,51 @@
 
     <hr class="divider my-5" />
 
+    <!-- Love Button -->
+    <div class="reveal text-center my-4">
+      <p style="color:var(--mid); font-size:0.9rem; margin-bottom:1rem;">Did you enjoy this story?</p>
+      <button class="love-btn" id="loveBtn" onclick="toggleLove('trip1')">
+        <span class="heart">♥</span>
+        <span class="love-label">Show some love</span>
+        <span class="love-count" id="loveCount">0</span>
+      </button>
+    </div>
+
+    <hr class="divider my-5" />
+
+    <!-- Comments (Disqus) -->
+    <div class="reveal" id="comments-section">
+      <h3 class="section-title mb-4" style="font-size:1.8rem;">Comments</h3>
+
+      <!-- DISQUS PLACEHOLDER — replace YOUR_SHORTNAME with your Disqus shortname -->
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https://arijitsgit.github.io/travel-blog/trip1.html';
+          this.page.identifier = 'trip1';
+        };
+        // ⚠️ Replace YOUR_SHORTNAME below with your Disqus shortname
+        // Get it free at https://disqus.com (takes 2 min to register)
+        var DISQUS_SHORTNAME = 'YOUR_SHORTNAME';
+        if (DISQUS_SHORTNAME !== 'YOUR_SHORTNAME') {
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        } else {
+          document.getElementById('disqus_thread').innerHTML =
+            '<div style="background:#f5f0eb; border:1px dashed #c0845a; border-radius:4px; padding:2rem; text-align:center; color:#888; font-size:0.9rem;">' +
+            '💬 Comments will appear here once you add your Disqus shortname.<br>' +
+            '<a href="https://disqus.com" target="_blank" style="color:var(--accent);">Register free at disqus.com →</a>' +
+            '</div>';
+        }
+      </script>
+    </div>
+
+    <hr class="divider my-5" />
+
     <div class="reveal">
       <a href="index.html" class="read-more">← Back to All Trips</a>
     </div>
