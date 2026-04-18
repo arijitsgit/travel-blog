@@ -9,48 +9,68 @@
 </head>
 <body>
 
-  <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Ari Explores</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto gap-3">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-        </ul>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">ARI EXPLORES</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Expeditions</a>
+        <a href="about.html" class="nav-link active">About</a>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">MENU</button>
     </div>
   </nav>
 
-  <!-- About -->
-  <section class="about-section">
-    <div class="container">
-      <div class="row align-items-center g-5" style="max-width:900px; margin:0 auto;">
+  <!-- About Hero -->
+  <div class="about-hero">
+    <div class="about-hero-bg" aria-hidden="true"></div>
+    <div class="about-hero-inner">
+      <span class="about-eyebrow">— THE EXPLORER —</span>
+      <h1 class="about-hero-title">ARIJIT<br><span style="color:var(--sienna);">PAL</span></h1>
+    </div>
+  </div>
 
-        <!-- Photo -->
-        <div class="col-md-5 reveal text-center">
-          <div class="photo-placeholder mx-auto" style="width:260px; height:320px; border-radius:4px; font-size:5rem;">🧳</div>
+  <!-- About content -->
+  <section class="about-section">
+    <div class="container px-4">
+      <div class="about-grid reveal">
+
+        <!-- Left: avatar -->
+        <div>
+          <div class="about-avatar-wrap">🧳</div>
+          <p class="about-meta">QA Engineer · Traveller · Storyteller</p>
         </div>
 
-        <!-- Bio -->
-        <div class="col-md-7 reveal">
-          <p class="section-label">The Traveller</p>
-          <h2 class="section-title mb-4">Hi, I'm Arijit.</h2>
-          <p style="color:#444; line-height:1.9; font-weight:300; font-size:1.05rem;">
-            A travel enthusiast and QA engineer who believes the best way to test life is to explore it.
-            I travel to find stories — the kind that don't make it to guidebooks.
+        <!-- Right: bio -->
+        <div>
+          <h2 class="about-name">Arijit Pal</h2>
+          <p class="about-role">Explorer · Field Correspondent</p>
+
+          <p class="about-text">
+            Hi — I'm Arijit. By day I'm a QA engineer, testing software for a living.
+            Outside of work, I test something far more interesting: <em>the world itself.</em>
           </p>
-          <p style="color:#444; line-height:1.9; font-weight:300; font-size:1.05rem; margin-top:1rem;">
-            This blog is where I document my journeys: the places I've visited, the people I've met,
-            and the lessons each trip quietly teaches you.
+
+          <p class="about-text">
+            I've always believed the best way to understand a place is to slow down inside it —
+            to eat where the locals eat, take the wrong turn, and stay long enough for the
+            extraordinary to start feeling ordinary.
           </p>
-          <p style="color:#444; line-height:1.9; font-weight:300; font-size:1.05rem; margin-top:1rem;">
-            When I'm not travelling, I'm probably planning the next one — or finding bugs in software.
+
+          <p class="about-text">
+            This blog is my field log. No sponsored stays, no curated reels — just honest
+            accounts of what I saw, what surprised me, and what I'd tell a friend before
+            they went to the same place.
           </p>
-          <a href="index.html" class="read-more mt-3 d-inline-block">See My Trips →</a>
+
+          <p class="about-text">
+            When I'm not on the road, I'm usually planning the next expedition — or filing
+            bug reports. Sometimes both feel the same.
+          </p>
+
+          <a href="index.html" class="about-link">Browse all expeditions →</a>
         </div>
 
       </div>
@@ -58,14 +78,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p class="mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:rgba(255,255,255,0.7);">Ari Explores</p>
-      <small>© 2026 · All rights reserved</small>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">ARI EXPLORES</span>
+      <span class="footer-coords">28°36'N · 77°12'E · EST. 2026</span>
+      <span class="footer-copy">© 2026</span>
     </div>
   </footer>
 
-  <button id="backToTop" title="Back to top">↑</button>
+  <button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

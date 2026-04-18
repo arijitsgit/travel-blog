@@ -9,69 +9,82 @@
 </head>
 <body>
 
-  <!-- Sticky Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Ari Explores</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto gap-3">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        </ul>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">ARI EXPLORES</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Expeditions</a>
+        <a href="about.html" class="nav-link">About</a>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">MENU</button>
     </div>
   </nav>
 
   <!-- Trip Hero -->
-  <div class="trip-hero" style="background-image: url('images/trip1/IMG_1833.jpeg'); background-size:cover; background-position:center;">
+  <div class="trip-hero" style="background-image: url('images/trip1/IMG_1833.jpeg');">
     <div class="trip-hero-content">
-      <span class="hero-eyebrow" style="animation:none;">Jan 2026 · Asia</span>
-      <h1>My First Adventure</h1>
+      <span class="trip-eyebrow">EXPEDITION 001 · JAN 2026 · ASIA</span>
+      <h1>My First<br>Adventure</h1>
     </div>
   </div>
 
-  <!-- Story -->
-  <article class="container my-5 py-2" style="max-width: 720px;">
+  <!-- Article -->
+  <article class="article-body">
 
     <h2 class="reveal">The Journey Begins</h2>
     <p class="reveal">
-      Write your travel story here. Describe how you felt arriving, the first sights, the smells,
-      the excitement. This is your space — write like you're telling a close friend about the trip.
+      Write your travel story here. Describe how you felt arriving — the first sights, the smells,
+      the electricity of stepping somewhere new. This is your log. Write it like you're telling a
+      close friend about the trip over a slow dinner.
     </p>
 
-    <!-- Inline photo -->
-    <div class="reveal my-5 photo-placeholder" style="height:420px;">
-      📷 Drop your photo here — replace with &lt;img src="images/trip1/photo1.jpg" class="w-100"&gt;
+    <div class="photo-placeholder reveal" style="height: 420px;">
+      <span class="ph-icon">📷</span>
+      Replace with: &lt;img src="images/trip1/photo1.jpg" class="article-photo"&gt;
     </div>
 
     <h2 class="reveal">Highlights</h2>
     <p class="reveal">
-      What were the best moments? A hidden café? A sunset? A local you met? Tell that story here.
-      The more specific and personal, the better — that's what readers remember.
+      What were the moments that made it? A hidden café down a narrow lane? A sunset that stopped
+      you mid-sentence? A stranger who became, briefly, a friend? The more specific and personal,
+      the better — that's what readers remember long after they've forgotten the general story.
     </p>
 
-    <!-- Photo Gallery -->
-    <h2 class="reveal mt-5">Photos</h2>
-    <div class="row g-3 reveal mt-1">
-      <div class="col-6 col-md-4">
-        <div class="photo-placeholder" style="height:180px;">🌅</div>
-      </div>
-      <div class="col-6 col-md-4">
-        <div class="photo-placeholder" style="height:180px;">🏔️</div>
-      </div>
-      <div class="col-6 col-md-4">
-        <div class="photo-placeholder" style="height:180px;">🌊</div>
+    <div class="art-divider reveal">
+      <span class="art-divider-icon">✦ FIELD NOTES ✦</span>
+    </div>
+
+    <p class="reveal">
+      Continue your story here. More observations, more moments, more of what only you noticed
+      because you were the one who was there.
+    </p>
+
+    <!-- Photo gallery -->
+    <div class="reveal mt-5">
+      <span class="gallery-label">— EXPEDITION PHOTOGRAPHS —</span>
+      <div class="gallery-frame">
+        <div class="gallery-grid">
+          <div class="g-item">🌅</div>
+          <div class="g-item">🏔️</div>
+          <div class="g-item">🌊</div>
+          <div class="g-item">🌿</div>
+          <div class="g-item">🏛️</div>
+          <div class="g-item">🌆</div>
+        </div>
+        <p class="gallery-frame-label">EXPEDITION 001 — MY FIRST ADVENTURE</p>
       </div>
     </div>
 
-    <hr class="divider my-5" />
+    <div class="art-divider reveal">
+      <span class="art-divider-icon">✦</span>
+    </div>
 
     <!-- Love Button -->
-    <div class="reveal text-center my-4">
-      <p style="color:var(--mid); font-size:0.9rem; margin-bottom:1rem;">Did you enjoy this story?</p>
+    <div class="love-wrap reveal">
+      <p class="love-caption">Did this story move you?</p>
       <button class="love-btn" id="loveBtn" onclick="toggleLove('trip1')">
         <span class="heart">♥</span>
         <span class="love-label">Show some love</span>
@@ -79,21 +92,21 @@
       </button>
     </div>
 
-    <hr class="divider my-5" />
+    <div class="art-divider reveal">
+      <span class="art-divider-icon">✦ COMMENTS ✦</span>
+    </div>
 
-    <!-- Comments (Disqus) -->
-    <div class="reveal" id="comments-section">
-      <h3 class="section-title mb-4" style="font-size:1.8rem;">Comments</h3>
+    <!-- Comments -->
+    <div class="comments-section reveal">
+      <h3 class="comments-heading">Field Notes</h3>
+      <p class="comments-sub">— LEAVE A MESSAGE FROM THE ROAD —</p>
 
-      <!-- DISQUS PLACEHOLDER — replace YOUR_SHORTNAME with your Disqus shortname -->
       <div id="disqus_thread"></div>
       <script>
         var disqus_config = function () {
           this.page.url = 'https://arijitsgit.github.io/travel-blog/trip1.html';
           this.page.identifier = 'trip1';
         };
-        // ⚠️ Replace YOUR_SHORTNAME below with your Disqus shortname
-        // Get it free at https://disqus.com (takes 2 min to register)
         var DISQUS_SHORTNAME = 'YOUR_SHORTNAME';
         if (DISQUS_SHORTNAME !== 'YOUR_SHORTNAME') {
           (function() {
@@ -104,30 +117,35 @@
           })();
         } else {
           document.getElementById('disqus_thread').innerHTML =
-            '<div style="background:#f5f0eb; border:1px dashed #c0845a; border-radius:4px; padding:2rem; text-align:center; color:#888; font-size:0.9rem;">' +
-            '💬 Comments will appear here once you add your Disqus shortname.<br>' +
-            '<a href="https://disqus.com" target="_blank" style="color:var(--accent);">Register free at disqus.com →</a>' +
+            '<div style="border:1px dashed #D4C4A0; border-radius:3px; padding:2rem; text-align:center; font-family:\'DM Mono\',monospace; font-size:0.75rem; letter-spacing:0.1em; color:#7A8195;">' +
+            '💬 COMMENTS ACTIVE AFTER DISQUS SETUP<br><br>' +
+            '<a href="https://disqus.com" target="_blank" style="color:#C4622D; text-decoration:none;">Register free at disqus.com →</a>' +
             '</div>';
         }
       </script>
     </div>
 
-    <hr class="divider my-5" />
-
-    <div class="reveal">
-      <a href="index.html" class="read-more">← Back to All Trips</a>
+    <div class="art-divider reveal">
+      <span class="art-divider-icon">✦</span>
     </div>
+
+    <div class="reveal pb-5">
+      <a href="index.html" class="about-link">← Back to All Expeditions</a>
+    </div>
+
   </article>
 
   <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p class="mb-1" style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:rgba(255,255,255,0.7);">Ari Explores</p>
-      <small>© 2026 · All rights reserved</small>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">ARI EXPLORES</span>
+      <span class="footer-coords">28°36'N · 77°12'E · EST. 2026</span>
+      <span class="footer-copy">© 2026</span>
     </div>
   </footer>
 
-  <button id="backToTop" title="Back to top">↑</button>
+  <button id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
