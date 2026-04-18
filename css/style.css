@@ -188,6 +188,14 @@ body {
 }
 .trip-card .card-text { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
 
+.trip-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
 .btn-glow {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   border: none;
