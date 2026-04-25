@@ -73,3 +73,46 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.querySelector('.love-label').textContent = 'You loved this!';
   }
 });
+
+// Subscribe form
+const subscribeForm = document.getElementById('subscribeForm');
+if (subscribeForm) {
+  subscribeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    subscribeForm.style.display = 'none';
+    const thanks = document.getElementById('subscribeThanks');
+    if (thanks) thanks.style.display = 'block';
+  });
+}
+
+// Lightbox
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<div class="lightbox-inner"><img class="lightbox-img" alt="" /><button class="lightbox-close" aria-label="Close">✕ CLOSE</button></div>';
+  document.body.appendChild(overlay);
+
+  const lbImg   = overlay.querySelector('.lightbox-img');
+  const lbClose = overlay.querySelector('.lightbox-close');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.g-item img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+  lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+});
