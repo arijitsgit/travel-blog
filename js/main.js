@@ -112,6 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
     img.addEventListener('click', () => openLightbox(img.src, img.alt));
   });
 
+  // Pin label toggle on click (for touch devices)
+  document.querySelectorAll('.g-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('label-visible');
+    });
+  });
+
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
   lbClose.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });

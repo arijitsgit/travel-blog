@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
 :root {
   --parchment:  #F2E8D5;
@@ -12,6 +12,7 @@
   --sand:       #D4C4A0;
   --display:    'Bebas Neue', sans-serif;
   --serif:      'Lora', serif;
+  --editorial:  'Playfair Display', 'Lora', serif;
   --mono:       'DM Mono', monospace;
 }
 
@@ -304,6 +305,26 @@ body {
   justify-content: center;
 }
 .featured-img-placeholder { font-size: 5rem; opacity: 0.25; }
+.featured-img--text {
+  background: var(--ink);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(196,98,45,0.06) 0px,
+    rgba(196,98,45,0.06) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+.featured-img-label {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  color: var(--parchment);
+  letter-spacing: 0.08em;
+  opacity: 0.35;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
 .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 .featured-card-link:hover .featured-img img { transform: scale(1.04); }
 .featured-img-overlay {
@@ -490,29 +511,51 @@ body {
   letter-spacing: 0.01em;
 }
 
+/* Trip hero without photo */
+.trip-hero--text-only {
+  background: var(--ink);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(196,98,45,0.04) 0px,
+    rgba(196,98,45,0.04) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
 /* ── Article ── */
 .article-body { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
 
 .article-body h2 {
-  font-family: var(--display);
-  font-size: 2.2rem;
-  letter-spacing: 0.03em;
+  font-family: var(--editorial);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: var(--ink);
   margin: 3rem 0 1rem;
+  line-height: 1.2;
 }
 .article-body p {
-  font-family: var(--serif);
-  font-size: 1.06rem;
+  font-family: var(--editorial);
+  font-size: 1.13rem;
   color: var(--ink-mid);
-  line-height: 1.9;
-  margin-bottom: 1.2rem;
+  line-height: 1.95;
+  margin-bottom: 1.35rem;
+}
+.article-body p em {
+  font-style: italic;
+  color: var(--ink);
+}
+.article-body p strong {
+  font-weight: 600;
+  color: var(--ink);
 }
 .article-body p:first-of-type::first-letter {
   font-family: var(--display);
-  font-size: 4rem;
+  font-size: 4.2rem;
   line-height: 0.75;
   float: left;
-  margin-right: 0.1em;
+  margin-right: 0.12em;
   color: var(--sienna);
 }
 
@@ -565,8 +608,25 @@ body {
   cursor: pointer;
   position: relative;
 }
-.gallery-grid .g-item:hover { opacity: 0.85; }
 .gallery-grid .g-item img { width: 100%; height: 100%; object-fit: cover; }
+.g-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26,30,40,0.88);
+  color: var(--parchment);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 0.5rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
+.g-item:hover .g-label,
+.g-item.label-visible .g-label { transform: translateY(0); }
 .gallery-frame {
   border: 1px solid var(--sand);
   border-radius: 3px;
