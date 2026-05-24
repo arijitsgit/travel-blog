@@ -969,6 +969,26 @@ body {
   padding: 0.3rem 0.5rem;
 }
 .lightbox-close:hover { color: var(--sienna); }
+.lightbox-location {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(242,232,213,0.6);
+  min-height: 1.2em;
+}
+.lightbox-nav {
+  background: none;
+  border: none;
+  color: rgba(242,232,213,0.5);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.lightbox-nav:hover { color: var(--sienna); }
 
 /* ── Back to top ── */
 #backToTop {

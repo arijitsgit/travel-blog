@@ -89,15 +89,36 @@ if (subscribeForm) {
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
-  overlay.innerHTML = '<div class="lightbox-inner"><img class="lightbox-img" alt="" /><button class="lightbox-close" aria-label="Close">✕ CLOSE</button></div>';
+  overlay.innerHTML = `
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8592;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" alt="" />
+      <div class="lightbox-location"></div>
+      <button class="lightbox-close" aria-label="Close">✕ CLOSE</button>
+    </div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8594;</button>
+  `;
   document.body.appendChild(overlay);
 
-  const lbImg   = overlay.querySelector('.lightbox-img');
-  const lbClose = overlay.querySelector('.lightbox-close');
+  const lbImg      = overlay.querySelector('.lightbox-img');
+  const lbClose    = overlay.querySelector('.lightbox-close');
+  const lbLocation = overlay.querySelector('.lightbox-location');
+  const lbPrev     = overlay.querySelector('.lightbox-prev');
+  const lbNext     = overlay.querySelector('.lightbox-next');
 
-  function openLightbox(src, alt) {
-    lbImg.src = src;
-    lbImg.alt = alt || '';
+  let items = [];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    const item  = items[currentIndex];
+    const img   = item.querySelector('img');
+    const label = item.querySelector('.g-label');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lbLocation.textContent = label ? label.textContent : '';
+    lbPrev.style.visibility = items.length > 1 ? 'visible' : 'hidden';
+    lbNext.style.visibility = items.length > 1 ? 'visible' : 'hidden';
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -107,19 +128,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.g-item img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => openLightbox(img.src, img.alt));
-  });
+  function navigate(dir) {
+    currentIndex = (currentIndex + dir + items.length) % items.length;
+    openLightbox(currentIndex);
+  }
 
-  // Pin label toggle on click (for touch devices)
-  document.querySelectorAll('.g-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('label-visible');
+  function initGallery() {
+    items = Array.from(document.querySelectorAll('.g-item'));
+    items.forEach((item, i) => {
+      const img = item.querySelector('img');
+      if (!img) return;
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', (e) => { e.stopPropagation(); openLightbox(i); });
     });
-  });
+  }
 
+  initGallery();
+
+  lbPrev.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
+  lbNext.addEventListener('click', (e) => { e.stopPropagation(); navigate(1); });
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
   lbClose.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   navigate(-1);
+    if (e.key === 'ArrowRight')  navigate(1);
+  });
 });
