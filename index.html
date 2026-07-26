@@ -71,9 +71,20 @@
         <div class="section-rule"></div>
       </div>
 
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="europe">EUROPE</button>
+          <button class="filter-tab" data-filter="americas">AMERICAS</button>
+          <button class="filter-tab" data-filter="asia">ASIA</button>
+        </div>
+        <input type="text" class="filter-search" id="filterSearch" placeholder="SEARCH EXPEDITIONS…" autocomplete="off" />
+      </div>
+
       <!-- Grid -->
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4 reveal">
+      <div class="row g-4" id="expeditionGrid">
+        <div class="col-md-6 col-lg-4" data-region="europe" data-title="Ghosts Gates Borrowed Trams Berlin Germany">
           <a href="trip-berlin.html" class="field-card">
             <div class="field-card-img">🧱</div>
             <div class="field-card-body">
@@ -88,7 +99,7 @@
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="europe" data-title="Munich Castles Germany Bavaria">
           <a href="trip-munich.html" class="field-card">
             <div class="field-card-img">🏰</div>
             <div class="field-card-body">
@@ -103,7 +114,7 @@
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="europe" data-title="Salzburg Austria Mozart">
           <a href="trip-salzburg.html" class="field-card">
             <div class="field-card-img">🎵</div>
             <div class="field-card-body">
@@ -118,7 +129,7 @@
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="europe" data-title="Madrid Spain">
           <div class="field-card field-card--upcoming">
             <div class="field-card-img">🇪🇸</div>
             <div class="field-card-body">
@@ -133,7 +144,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="americas" data-title="Maine USA New England">
           <div class="field-card field-card--upcoming">
             <div class="field-card-img">🦞</div>
             <div class="field-card-body">
@@ -148,7 +159,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="americas" data-title="Alaska USA">
           <div class="field-card field-card--upcoming">
             <div class="field-card-img">🏔️</div>
             <div class="field-card-body">
@@ -163,7 +174,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="col-md-6 col-lg-4" data-region="americas" data-title="World Cup 2026 NY NJ New York New Jersey Football Soccer">
           <div class="field-card field-card--upcoming">
             <div class="field-card-img">⚽</div>
             <div class="field-card-body">
@@ -178,6 +189,15 @@
           </div>
         </div>
       </div>
+
+      <!-- Pagination -->
+      <div class="pagination-bar" id="paginationBar">
+        <button class="page-btn" id="prevPage">← PREV</button>
+        <span class="page-info" id="pageInfo"></span>
+        <button class="page-btn" id="nextPage">NEXT →</button>
+      </div>
+
+      <p class="no-results" id="noResults">No expeditions found.</p>
 
     </div>
   </section>

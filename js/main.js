@@ -74,6 +74,79 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Expedition filter + pagination
+(function () {
+  const PER_PAGE = 9;
+  let currentFilter = 'all';
+  let currentPage   = 1;
+  let currentSearch = '';
+
+  const grid       = document.getElementById('expeditionGrid');
+  const searchInput= document.getElementById('filterSearch');
+  const tabButtons = document.querySelectorAll('.filter-tab');
+  const prevBtn    = document.getElementById('prevPage');
+  const nextBtn    = document.getElementById('nextPage');
+  const pageInfo   = document.getElementById('pageInfo');
+  const noResults  = document.getElementById('noResults');
+  const paginationBar = document.getElementById('paginationBar');
+
+  if (!grid) return;
+
+  const allCards = Array.from(grid.querySelectorAll(':scope > [data-region]'));
+
+  function getFiltered() {
+    const q = currentSearch.toLowerCase();
+    return allCards.filter(card => {
+      const regionMatch = currentFilter === 'all' || card.dataset.region === currentFilter;
+      const searchMatch = !q || card.dataset.title.toLowerCase().includes(q);
+      return regionMatch && searchMatch;
+    });
+  }
+
+  function render() {
+    const filtered   = getFiltered();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+    currentPage      = Math.min(currentPage, totalPages);
+    const start      = (currentPage - 1) * PER_PAGE;
+    const visible    = new Set(filtered.slice(start, start + PER_PAGE));
+
+    allCards.forEach(card => {
+      card.style.display = visible.has(card) ? '' : 'none';
+      card.classList.add('visible');
+    });
+
+    const show = filtered.length > 0;
+    noResults.style.display      = show ? 'none' : 'block';
+    paginationBar.style.display  = filtered.length > PER_PAGE ? 'flex' : 'none';
+    pageInfo.textContent         = `${currentPage} / ${totalPages}`;
+    prevBtn.disabled             = currentPage === 1;
+    nextBtn.disabled             = currentPage === totalPages;
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      currentPage   = 1;
+      render();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      currentSearch = searchInput.value;
+      currentPage   = 1;
+      render();
+    });
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { currentPage--; render(); window.scrollTo({ top: document.getElementById('expeditions').offsetTop - 80, behavior: 'smooth' }); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { currentPage++; render(); window.scrollTo({ top: document.getElementById('expeditions').offsetTop - 80, behavior: 'smooth' }); });
+
+  render();
+})();
+
 // Subscribe form
 const subscribeForm = document.getElementById('subscribeForm');
 if (subscribeForm) {
